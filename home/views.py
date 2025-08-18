@@ -7,7 +7,7 @@ from rest_framework import status
 # Create your views here.
 def home(request):
     restaurant_name=getattr(settings, "RESTAURANT_NAME", "Our Restaurant")
-    return render(request, "home.html", {"restaurant_name": Q restaurant})
+    return render(request, "home.html", {"restaurant_name": restaurant_name})
 
 
 class MenuItemView(APIView):
