@@ -6,18 +6,16 @@ from rest_framework import status
 # from .models import Restaurant
 # Create your views here.
 def home(request):
-    restaurant_name=getattr(settings, "RESTAURANT_NAME", "Our Restaurant")
+    restaurant_name = getattr(settings, "RESTAURANT_NAME", "Our Restaurant")
     return render(request, "home.html", {"restaurant_name": restaurant_name})
 
 
-class MenuItemView(APIView):
-
-    def get(self, request):
-        menu_item = [
+class menu_list(request):
+        menu_items = [
             {"id": 1, "name": "pizze", "price":199},
             {"id": 2, "name": "paneer", "price": 299},
             {"id": 3, "name": "Burger", "price": 99},
             {"id": 4, "name": "coffee", "price": 129},
         ]
-        return Response (menu_item, status=status.HTTP_200_OK)
+        return render(request, "menu.html", {"menu_items": menu_items})
          
