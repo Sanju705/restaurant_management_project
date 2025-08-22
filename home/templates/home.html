@@ -4,26 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width, initial-scale=1.0">
     <title>Homepage</title>
-    <!-- <link rel="stylesheet" href="{% static 'CSS/home.css' %}"> -->
+    <style>
+        body{
+        margin: 0;
+        font-family: Arial, sans-serif:
+        background-color: #f4f4f9;
+        color: #333
+        }
+
+        header {
+        background-color: #4CAF50;
+        padding: 20px;
+        text-align:center;
+        color: white;
+        }
+        header h1{
+        margin:0;
+        font-size: 2.5rem;
+        }
+
+        nav{
+        background-color: #333;
+        padding:10px;
+        text-align: center;
+        }
+
+        nav a{
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1.1rem;
+        transition: color 0.3s ease;
+        }
+
+        nav a:hover{
+        color:#4CAF50;
+        }
+
+        main{
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        main h2{
+        color: #4CAF50;
+        margin-top: 0;
+        }
+        main p{
+        line-height: 1.6;
+        font-size: 1rem;
+        }
+
+        footer{
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        margin-top: 40px;
+        }
 </head>
-<body style="margin:0; font-family: Arial, sans-serif; background-color:#f4f4f9; color:#333;">
-    <header style="background-color:#4CAF50;padding:20px; text-align:center; color:white;">
-        <h1 style="margin:0; font-size:2.5rem;">Welcome to {{restaurant_name}}</h1>
+<body>
+    <header>
+        <h1>Welcome to {{restaurant_name}}</h1>
     </header>
-    <nav style="background-color:#333; padding:10px;">
-        <a href="{% templates 'about.html' %}" style="color:white; text-decortion:none;"> About</a>
+
+    <nav>
+        <a href="{% templates 'about.html' %}"> About</a>
+        
     </nav>
-        <main style="max_width:900px; margin:40px auto; padding:20px; background:white; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-            <h2 style="color:#4CAF50; margin-top:0;">About Us</h2>
-            <p style="line-height:1.6">
+        <main>
+            <h2>About Us</h2>
+            <p>
                 We provide high-quality services to our customers with care and commitmet.
                 our mission is to deliver solution that make life easier and more enjoyable.
             </p>
-            <h2 style="color:#4CAF50;">Our Services</h2>
+            <h2>Our Services</h2>
+            <p>
+                Fresh and healthy meals <br>
+                Fast delivery <br>
+                Customer-first approach
     </main>
 
-    <footer style="background-color:#333; color:white; text-align:center; padding:15px; margin-top:40px;">
-        <p style="margin:0;">©️ 2025 My Website</p>
+    <footer>
+        <p>©️ 2025 My Website</p>
     </footer>
 </body>
 </html>
