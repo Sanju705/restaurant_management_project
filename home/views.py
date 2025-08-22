@@ -18,4 +18,6 @@ class menu_list(request):
             {"id": 4, "name": "coffee", "price": 129},
         ]
         return render(request, "menu.html", {"menu_items": menu_items})
-         
+        
+  def about(request):
+    return render(request, 'about.html')       
