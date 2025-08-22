@@ -19,5 +19,5 @@ class menu_list(request):
         ]
         return render(request, "menu.html", {"menu_items": menu_items})
         
-  def about(request):
-    return render(request, 'about.html')       
+def about(request):
+   return render(request, 'about.html')       
