@@ -10,7 +10,7 @@ def home(request):
     return render(request, "home.html", {"restaurant_name": restaurant_name})
 
 
-class menu_list(request):
+def menu_list(request):
         menu_items = [
             {"id": 1, "name": "pizze", "price":199},
             {"id": 2, "name": "paneer", "price": 299},
