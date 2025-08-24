@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" contact="width=device-width, initial-scale=1.0">
+        <title>Contact Us - {{ restaurant_name }}</title>
+        <style>
+            body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f9;
+            color:#333;
+            }
+            header {
+            background-color: #4CAF50
+            color: white;
+            padding: 20px;
+            text-align: center;
+            }
+            h2{
+            color: #4CAF50;
+            }
+            .contact-info {
+            line-height: 1.8;
+            }
+            footer {
+            back-ground-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+            }
+        </style>
+    </head>
+        <body>
+            <header>
+                <h1>Contact {{ reataurant_name }}</h1>
+            </header>
+
+            <main>
+                <h2>Get in Touch</h2>
+                <div class="contact-info">
+                    <p><strong>Address :</strong> 123 main street, City, India</p>
+                    <p><strong>Phone :</strong>+91 9807685678</p>
+                    <p><strong>Email :</strong>support@myrestaurant.com</p>
+                    <p><strong>Opening Hours :</strong> Mon - sat, 9:00AM - 10:00PM</p>
+                </div>
+            </main>
+            <footer>
+                <p>copyright 2025 {{ restaurant_name }}. All right reserved.</p>
+            </footer>
+        </body>
+</html>
