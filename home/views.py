@@ -26,6 +26,6 @@ def about(request):
 
 def contact(request):
     context = {
-        "reataurant_name": "My Reataurant"
+        "restaurant_name": "My Reataurant"
     }
     return render(request, "contact.html", context)
