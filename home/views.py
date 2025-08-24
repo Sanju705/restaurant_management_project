@@ -6,8 +6,11 @@ from rest_framework import status
 # from .models import Restaurant
 # Create your views here.
 def home(request):
-    restaurant_name = getattr(settings, "RESTAURANT_NAME", "Our Restaurant")
-    return render(request, "home.html", {"restaurant_name": restaurant_name})
+    context={
+    "restaurant_name" = getattr(settings, "RESTAURANT_NAME", "Our Restaurant"),
+    "restaurant_phone" = setting.RESTAURANT_PHONE
+    }
+    return render(request, "home.html", context)
 
 
 def menu_list(request):
