@@ -24,9 +24,9 @@ def home(request):
 def menu_list(request):
     try:
         context = {
-            "menu_items" = [
-                {"id": 1, "name": "pizze", "price":199},
-                {"id": 2, "name": "paneer", "price": 299},
+            "menu_items": [
+                {"id": 1, "name": "Pizze", "price":199},
+                {"id": 2, "name": "Paneer", "price": 299},
                 {"id": 3, "name": "Burger", "price": 99},
                 {"id": 4, "name": "coffee", "price": 129},
             ]
