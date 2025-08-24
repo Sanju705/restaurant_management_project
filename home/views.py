@@ -22,13 +22,19 @@ def home(request):
 
 
 def menu_list(request):
-        menu_items = [
-            {"id": 1, "name": "pizze", "price":199},
-            {"id": 2, "name": "paneer", "price": 299},
-            {"id": 3, "name": "Burger", "price": 99},
-            {"id": 4, "name": "coffee", "price": 129},
-        ]
-        return render(request, "menu.html", {"menu_items": menu_items})
+    try:
+        context = {
+            "menu_items" = [
+                {"id": 1, "name": "pizze", "price":199},
+                {"id": 2, "name": "paneer", "price": 299},
+                {"id": 3, "name": "Burger", "price": 99},
+                {"id": 4, "name": "coffee", "price": 129},
+            ]
+        }
+        return render(request, "menu.html", context)
+    except Exception as e:
+        logger.error(f"Error rendering menu list: {e}", exc_info=True)
+        return HttpResponseServerError("Something went wrong while loading the menu.")
         
 def about(request):
     restaurant_name = getattr(setting, "RESTAURANT_NAME", "Our Restaurant")
