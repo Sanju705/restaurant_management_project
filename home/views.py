@@ -3,14 +3,18 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from django.http import HttpResponseServerError
 # from .models import Restaurant
 # Create your views here.
 def home(request):
-    context={
-    "restaurant_name" = getattr(settings, "RESTAURANT_NAME", "Our Restaurant"),
-    "restaurant_phone" = setting.RESTAURANT_PHONE
-    }
-    return render(request, "home.html", context)
+    try:
+        context={
+            "restaurant_name" = "My Restaurant",
+            "restaurant_phone" = getattr(settings, "RESTAURANT_PHONE", "Not Available")
+        }
+        return render(request, "home.html", context)
+    except Exception as e:
+        return HttpResponseServerError(f"An error occurred: {str(e)}")
 
 
 def menu_list(request):
@@ -28,7 +32,11 @@ def about(request):
 
 
 def contact(request):
-    context = {
-        "restaurant_name": "My Reataurant"
-    }
-    return render(request, "contact.html", context)
+    try:
+        context = {
+            "restaurant_name": "My Reataurant",
+            # "restaurant_phone": getattr(settings, "RESTAURANT_PHONE, "Not Available"),
+        }
+        return render(request, "contact.html", context)
+    except Exception as e:
+        return HttpResponseServerError(f"An error occurred: {str(e)}")
