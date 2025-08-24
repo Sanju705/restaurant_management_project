@@ -9,8 +9,8 @@ from django.http import HttpResponseServerError
 def home(request):
     try:
         context={
-            "restaurant_name" = "My Restaurant",
-            "restaurant_phone" = getattr(settings, "RESTAURANT_PHONE", "Not Available")
+            "restaurant_name": "My Restaurant",
+            "restaurant_phone": getattr(settings, "RESTAURANT_PHONE", "Not Available")
         }
         return render(request, "home.html", context)
     except Exception as e:
