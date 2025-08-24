@@ -28,4 +28,4 @@ def contact(request):
     context = {
         "reataurant_name": "My Reataurant"
     }
-    return render(request, "contact.html")
+    return render(request, "contact.html", context)
