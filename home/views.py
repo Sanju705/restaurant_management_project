@@ -22,3 +22,10 @@ def menu_list(request):
 def about(request):
     restaurant_name = getattr(setting, "RESTAURANT_NAME", "Our Restaurant")
    return render(request, 'about.html',{"restaurant_name": restaurant_name})   
+
+
+def contact(request):
+    context = {
+        "reataurant_name": "My Reataurant"
+    }
+    return render(request, "contact.html")
