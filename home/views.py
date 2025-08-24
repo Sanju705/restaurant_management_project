@@ -1,3 +1,4 @@
+import logging
 from django.conf import settings
 from django.shortcuts import render
 from rest_framework.views import APIView
@@ -6,6 +7,8 @@ from rest_framework import status
 from django.http import HttpResponseServerError
 # from .models import Restaurant
 # Create your views here.
+logger = logging.getLogger(__name__)
+
 def home(request):
     try:
         context={
@@ -14,7 +17,8 @@ def home(request):
         }
         return render(request, "home.html", context)
     except Exception as e:
-        return HttpResponseServerError(f"An error occurred: {str(e)}")
+        logger.error(f"Error remdering homepage: {e}", exc_info=True)
+        return HttpResponseServerError("Something went wrong while loading the homepage.")
 
 
 def menu_list(request):
@@ -39,4 +43,5 @@ def contact(request):
         }
         return render(request, "contact.html", context)
     except Exception as e:
-        return HttpResponseServerError(f"An error occurred: {str(e)}")
+        logger.error(f"Error rendering contact page: {e}", exc_info=True)
+        return HttpResponseServerError("Something went wrong while loading t.he contact page")
