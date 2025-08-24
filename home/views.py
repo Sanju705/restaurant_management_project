@@ -28,7 +28,7 @@ def menu_list(request):
                 {"id": 1, "name": "Pizze", "price":199},
                 {"id": 2, "name": "Paneer", "price": 299},
                 {"id": 3, "name": "Burger", "price": 99},
-                {"id": 4, "name": "coffee", "price": 129},
+                {"id": 4, "name": "Coffee", "price": 129},
             ]
         }
         return render(request, "menu.html", context)
